@@ -1,0 +1,49 @@
+//CREAR TABLA GENERO
+CREATE TABLE genero (
+    id_genero NUMBER PRIMARY KEY,
+    nombre VARCHAR2(100) NOT NULL,
+    estado CHAR(1),
+    sigla VARCHAR2(10),
+    codigo VARCHAR2(10),
+    
+    fecha_creacion TIMESTAMP,
+    fecha_actualizacion TIMESTAMP,
+    usuario_reacion NUMBER,
+    usuario_actualizacion NUMBER
+);
+
+
+//Insertar datos a la tabla GENERO
+INSERT INTO genero
+(ID_GENERO, NOMBRE, ESTADO, SIGLA, CODIGO)
+VALUES
+(1,'Masculino',1,'M','01');
+
+INSERT INTO genero
+(ID_GENERO, NOMBRE, ESTADO, SIGLA, CODIGO)
+VALUES
+(2,'Femenino',2,'F','02');
+
+INSERT INTO genero
+(ID_GENERO, NOMBRE, ESTADO, SIGLA, CODIGO)
+VALUES
+(3,'Otro',2,'O','03');
+
+
+//Crear una secuencia para GENERO
+CREATE SEQUENCE SQ_GENERO
+   MINVALUE 10
+   INCREMENT BY 2
+   NOMAXVALUE;
+   
+   //Crear un Trigger para GENERO;
+CREATE TRIGGER TRG_GENERO
+BEFORE INSERT ON GENERO
+FOR EACH ROW
+BEGIN
+   SELECT SQ_GENERO.NEXTVAL INTO :NEW.id_genero FROM DUAL;
+END;
+
+
+//Recuperar datos tabla genero
+SELECT * FROM genero;
