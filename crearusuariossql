@@ -1,0 +1,92 @@
+Microsoft Windows [Versión 10.0.22631.3296]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\rodri>sqlplus
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Jue Abr 4 14:54:38 2024
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Introduzca el nombre de usuario: system
+Introduzca la contrase±a:
+Hora de ┌ltima Conexi¾n Correcta: Jue Abr 04 2024 14:41:51 -05:00
+
+Conectado a:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
+Sesi¾n modificada.
+
+SQL> CREATE USER USUARIO_MATRICULA IDENTIFIED BY "12345678"
+  2  DEFAULT TABLESPACE "USERS"
+  3  TEMPORARY TABLESPACE "TEMP";
+
+Usuario creado.
+
+SQL> ALTER USER USUARIO_MATRICULA QUOTA UNLIMITED ON USERS;
+
+Usuario modificado.
+
+SQL> GRANT CREATE SESSION TO USUARIO_MATRICULA;
+
+Concesi¾n terminada correctamente.
+
+SQL> GRANT "RESOURCE" TO USUARIO_MATRICULA;
+
+Concesi¾n terminada correctamente.
+
+SQL> ALTER USER USUARIO_MATRICULA DEFAULT ROLE "RESOURCE";
+
+Usuario modificado.
+--EDWARD RODRIGO URIARTE
+SQL>
+
+
+
+--CREAR USUARIO CAFETERIA
+
+Microsoft Windows [Versión 10.0.22631.3296]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\rodri>sqlplus
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Jue Abr 4 14:54:38 2024
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Introduzca el nombre de usuario: system
+Introduzca la contrase±a:
+Hora de ┌ltima Conexi¾n Correcta: Jue Abr 04 2024 14:41:51 -05:00
+
+Conectado a:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
+Sesi¾n modificada.
+
+
+SQL> CREATE USER CAFETERIA IDENTIFIED BY "12345678"
+  2  DEFAULT TABLESPACE "USERS"
+  3  TEMPORARY TABLESPACE "TEMP";
+
+Usuario creado.
+
+SQL> ALTER USER CAFETERIA QUOTA UNLIMITED ON USERS;
+
+Usuario modificado.
+
+SQL> GRANT "RESOURCE" TO CAFETERIA;
+
+Concesi¾n terminada correctamente.
+
+SQL> ALTER USER CAFETERIA DEFAULT ROLE "RESOURCE";
+
+Usuario modificado.
+--EDWARD RODRIGO URIARTE
+SQL>|
